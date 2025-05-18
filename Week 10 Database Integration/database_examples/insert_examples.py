@@ -27,3 +27,12 @@ VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 
 connection.commit()
 
+# UPDATE examples-----------------------------------------------------------------------------------
+# NOTE: Queries (SELECT, INSERT, UPDATE, DELETE, etc..) can also be stored as separate strings.
+
+update_query = """
+UPDATE users SET password = ?, age = ? 
+WHERE username = ?"""
+
+cursor.execute(update_query, ('newpassword12345', 42, 'alicej'))
+connection.commit()
